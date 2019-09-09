@@ -7,11 +7,11 @@ class Flora < Formula
 
   if OS.mac?
     url "https://github.com/ketchoop/flora/releases/download/0.2.0/flora_0.2.0_MacOS_x86_64.tar.gz"
-    sha256 "6b7c28c91af2730a80a328fc9579d75ee2b63e8d2f7daab38d8ea03350885a1b"
+    sha256 "0e69c91c3048f17aa4303f036be1bd6584221990010269ad013b276b20fa1e31"
   elsif OS.linux?
     if Hardware::CPU.intel?
       url "https://github.com/ketchoop/flora/releases/download/0.2.0/flora_0.2.0_Linux_x86_64.tar.gz"
-      sha256 "be010728473d60ba7c73e1bdb102fb0a266ac97873da658cdf4d1481f00f0b30"
+      sha256 "79064cbba11d94e4dea8c2d8a701c127caaaa94a0c59d01ce5cf0a1966726e0f"
     end
   end
   
