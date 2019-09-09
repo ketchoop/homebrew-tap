@@ -6,12 +6,12 @@ class Flora < Formula
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/ketchoop/flora/releases/download/0.2.0/flora_0.2.0_MacOS_x86_64.tar.gz"
-    sha256 "0e69c91c3048f17aa4303f036be1bd6584221990010269ad013b276b20fa1e31"
+    url "https://github.com/ketchoop/flora/releases/download/0.2.0/flora_0.2.0_darwin_amd64.tar.gz"
+    sha256 "73d0d7cdd97a30c0b21679329ed59db1c11b92d2afbc931d645761f9c2479f98"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/ketchoop/flora/releases/download/0.2.0/flora_0.2.0_Linux_x86_64.tar.gz"
-      sha256 "79064cbba11d94e4dea8c2d8a701c127caaaa94a0c59d01ce5cf0a1966726e0f"
+      url "https://github.com/ketchoop/flora/releases/download/0.2.0/flora_0.2.0_linux_amd64.tar.gz"
+      sha256 "4b2bd9b6e226beafe30ae0083b797b36e93eb8237578ba697f973353f7c03557"
     end
   end
   
