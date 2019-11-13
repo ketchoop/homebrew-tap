@@ -2,22 +2,32 @@
 class Flora < Formula
   desc "Allows to manage and switch between multiple terraform versions"
   homepage "https://github.com/ketchoop/flora"
-  version "0.2.0"
+  version "0.2.1"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/ketchoop/flora/releases/download/0.2.0/flora_0.2.0_darwin_amd64.tar.gz"
-    sha256 "73d0d7cdd97a30c0b21679329ed59db1c11b92d2afbc931d645761f9c2479f98"
+    url "https://github.com/ketchoop/flora/releases/download/0.2.1/flora_0.2.1_darwin_amd64.tar.gz"
+    sha256 "4edd47c791d24bedfdbc73ccc702bfd8ef205efdc68fd22d5d3e0aa6842dc71c"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/ketchoop/flora/releases/download/0.2.0/flora_0.2.0_linux_amd64.tar.gz"
-      sha256 "4b2bd9b6e226beafe30ae0083b797b36e93eb8237578ba697f973353f7c03557"
+      url "https://github.com/ketchoop/flora/releases/download/0.2.1/flora_0.2.1_linux_amd64.tar.gz"
+      sha256 "2b9c60e57980a28582cce4fdcbe8d4b4422cc7ad2733bb017e218c5b091130c6"
     end
   end
   
   head "https://github.com/ketchoop/flora.git"
+  
+  conflicts_with "terraform"
 
   def install
+    case File.basename(ENV["SHELL"])
+    when "zsh"
+    zsh_completion.install "configs/autocomplete/flora_zsh_autocomplete" => "_flora"
+    when "bash"
+      url "https://raw.githubusercontent.com/ketchoop/flora/master/configs/autocomplete/flora_bash_autocomplete"
+      bash_completion.install "configs/autocomplete/flora_bash_autocomplete" => "_flora"
+    end
+    
     bin.install "flora"
   end
 
