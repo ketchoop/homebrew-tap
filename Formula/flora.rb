@@ -10,7 +10,7 @@ class Flora < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/ketchoop/flora/releases/download/0.2.2/flora_0.2.2_darwin_arm64.tar.gz"
-      sha256 "5702eb399b5c3e9772145912d40f03b078f89327c7a0824a84d45f49613238a1"
+      sha256 "94bd64b59bfce162dee2ed259b61e82d071e1b3eec4bdde107a86433f15841dc"
 
       def install
         case File.basename(ENV["SHELL"])
@@ -26,7 +26,7 @@ class Flora < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/ketchoop/flora/releases/download/0.2.2/flora_0.2.2_darwin_amd64.tar.gz"
-      sha256 "0e30c40da3361d8c1d095db67a9d18bf316781ecec10270a2e1bb620677bfacb"
+      sha256 "df64a447fecf4fd21b25d216437d9e31cce0c347745c2d9d3700dc5d1e98f9ad"
 
       def install
         case File.basename(ENV["SHELL"])
@@ -45,7 +45,7 @@ class Flora < Formula
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/ketchoop/flora/releases/download/0.2.2/flora_0.2.2_linux_amd64.tar.gz"
-      sha256 "8bd9dd6e9cc9dd3ab5b6443fdec82e463942a873e8e4b0fef6dc4de3d0834aae"
+      sha256 "688d22e839a603f855e8c26e6f6e8f4d59162a7d97e6402a159831b88597be63"
 
       def install
         case File.basename(ENV["SHELL"])
@@ -61,7 +61,7 @@ class Flora < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/ketchoop/flora/releases/download/0.2.2/flora_0.2.2_linux_arm64.tar.gz"
-      sha256 "e5536d583cf77ec395889d3c4675cea5c31700518a00e49a9b6906ec2289f598"
+      sha256 "77b311f8f7db5bdce81abf516ba4dc10c1b4829f68faeacb96e992625e64f2b1"
 
       def install
         case File.basename(ENV["SHELL"])
